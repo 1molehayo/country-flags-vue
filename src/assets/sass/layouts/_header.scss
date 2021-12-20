@@ -22,10 +22,7 @@
     @include font-weight(bold);
     margin-bottom: 0;
     font-size: 2rem;
-
-    @include themed() {
-      color: theme-color(logo);
-    }
+    color: var(--logo);
 
     @include respond(large) {
       font-size: 2.6rem;

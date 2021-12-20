@@ -37,32 +37,24 @@
         width: 100%;
         height: auto;
 
-        @include themed() {
-          border: 1px solid rgba($color: theme-color(text-shade1), $alpha: 0.3);
-        }
+        border: 1px solid rgba($color: var(--text-shade1), $alpha: 0.3);
       }
     }
 
     &__label {
       @include font-size(small);
       @include font-weight(bold);
-      @include themed() {
-        color: rgba($color: theme-color(text-shade1), $alpha: 0.6);
-      }
       margin-bottom: 5px;
+      color: rgba($color: var(--text-shade1), $alpha: 0.6);
     }
 
     &__text {
       @include font-size(regular);
 
-      @include themed() {
-        color: theme-color(text-shade2);
-      }
+      color: var(--text-shade2);
 
       em {
-        @include themed() {
-          color: rgba($color: theme-color(text-shade2), $alpha: 0.6);
-        }
+        color: rgba($color: var(--text-shade2), $alpha: 0.6);
       }
     }
   }

@@ -14,9 +14,7 @@
       cursor: pointer;
 
       &:hover {
-        @include themed() {
-          color: theme-color(primary);
-        }
+        color: var(--primary);
       }
     }
   }

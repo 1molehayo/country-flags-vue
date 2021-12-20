@@ -27,9 +27,7 @@
 
 @mixin heading {
   @include font-weight(bold);
-  @include themed() {
-    color: theme-color(text-shade2);
-  }
+  color: var(--text-shade2);
   margin-bottom: 1rem;
   line-height: 1.2;
 }

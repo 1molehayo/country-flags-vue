@@ -1,29 +1,17 @@
 .modal {
   display: flex;
+  left: 50% !important;
   flex-direction: column;
-  width: 100%;
-  max-width: 700px;
-  margin: auto;
+  width: 100% !important;
+  margin: 0;
+  transform: translateX(-50%);
+  border: 1px solid rgba($color: var(--text-shade1), $alpha: 0.3);
   border-radius: 12px;
+  background: var(--secondary);
 
-  @include themed() {
-    border: 1px solid rgba($color: theme-color(text-shade1), $alpha: 0.3);
-    background: theme-color(secondary);
-  }
-
-  &-backdrop {
-    display: flex;
-    position: fixed;
-    top: 0;
-    left: 0;
-    align-items: center;
-    justify-content: center;
+  @include respond(small) {
     width: 100%;
-    height: 100%;
-
-    @include themed() {
-      background: rgba($color: theme-color(secondary), $alpha: 0.9);
-    }
+    max-width: 700px;
   }
 
   &__body {
@@ -111,4 +99,8 @@
     padding: 1.5rem 2.5rem;
     border-bottom: 2px solid color(light-grey);
   }
+}
+
+.vm--overlay {
+  background: rgba($color: var(--secondary), $alpha: 0.9);
 }

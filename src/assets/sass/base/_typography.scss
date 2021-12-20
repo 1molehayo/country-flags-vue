@@ -17,9 +17,8 @@ li,
 a {
   @include font-weight(regular);
   @include font-size(medium);
-  @include themed() {
-    color: theme-color(text-shade1);
-  }
+
+  color: var(--text-shade1);
   letter-spacing: 0.2px;
   line-height: 1.6;
 }

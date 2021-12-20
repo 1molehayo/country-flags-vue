@@ -1,9 +1,10 @@
+const path = require("path");
+
 module.exports = {
-  css: {
-    loaderOptions: {
-      scss: {
-        additionalData: `@import "~@/assets/sass/main.scss"`,
-      },
+  pluginOptions: {
+    "style-resources-loader": {
+      preProcessor: "scss",
+      patterns: [path.resolve(__dirname, "./src/assets/sass/main.scss")],
     },
   },
 };

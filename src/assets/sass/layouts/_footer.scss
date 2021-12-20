@@ -4,25 +4,19 @@
 
   a {
     @include font-weight(bold);
-    @include themed() {
-      color: theme-color(text-shade2);
-    }
+    color: var(--text-shade2);
 
     @include respond(large) {
       transition: 0.3s ease;
 
       &:hover {
-        @include themed() {
-          color: theme-color(primary);
-        }
+        color: var(--primary);
       }
     }
   }
 
   &__text {
     @include font-size(small);
-    @include themed() {
-      color: rgba($color: theme-color(text-shade1), $alpha: 0.7);
-    }
+    color: rgba($color: var(--text-shade1), $alpha: 0.7);
   }
 }

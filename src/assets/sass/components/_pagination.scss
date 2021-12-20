@@ -4,7 +4,7 @@
   width: 100%;
   list-style-type: none;
 
-  &__item {
+  .page-link {
     @include font-size(small);
     display: flex;
     align-items: center;
@@ -12,65 +12,28 @@
     height: 32px;
     margin: auto 4px;
     padding: 0 12px;
-    border-radius: 16px;
+    border-radius: 30px;
+    color: var(--text-shade2);
     letter-spacing: 0.01071em;
     line-height: 1.43;
     text-align: center;
 
-    @include themed() {
-      color: theme-color(text-shade2);
-    }
-
-    &.dots:hover {
-      background-color: transparent;
-      cursor: default;
-    }
-
     &:hover {
-      @include themed() {
-        background-color: rgba($color: theme-color(text-shade2), $alpha: 0.14);
-      }
+      background-color: var(--pagination-hover);
       cursor: pointer;
     }
+  }
 
-    &.selected {
-      @include themed() {
-        background-color: rgba($color: theme-color(primary), $alpha: 0.18);
-      }
-    }
-
-    .arrow {
-      &::before {
-        content: '';
-        display: inline-block;
-        position: relative;
-        width: 0.4em;
-        height: 0.4em;
-        @include themed() {
-          border-top: 0.12em solid theme-color(text-shade2);
-          border-right: 0.12em solid theme-color(text-shade2);
-        }
-      }
-
-      &.left {
-        transform: rotate(-135deg) translate(-50%);
-      }
-
-      &.right {
-        transform: rotate(45deg);
+  .page-item {
+    &.active {
+      .page-link {
+        background-color: var(--pagination-active);
       }
     }
 
     &.disabled {
-      pointer-events: none;
-
-      .arrow::before {
-        @include themed() {
-          border-top: 0.12em solid
-            rgba($color: theme-color(text-shade2), $alpha: 0.63);
-          border-right: 0.12em solid
-            rgba($color: theme-color(text-shade2), $alpha: 0.63);
-        }
+      .page-link {
+        pointer-events: none;
       }
 
       &:hover {
@@ -79,4 +42,10 @@
       }
     }
   }
+}
+
+.VuePagination__count {
+  @include font-size(small);
+  margin-top: 2rem;
+  color: var(--text-shade2);
 }

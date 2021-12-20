@@ -41,9 +41,7 @@
       height: 150px;
     }
 
-    @include themed() {
-      border: 1px solid theme-color(text-shade1);
-    }
+    border: 1px solid var(--text-shade1);
 
     img {
       object-fit: cover;
