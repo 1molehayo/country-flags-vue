@@ -1,0 +1,82 @@
+.pagination {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  list-style-type: none;
+
+  &__item {
+    @include font-size(small);
+    display: flex;
+    align-items: center;
+    min-width: 32px;
+    height: 32px;
+    margin: auto 4px;
+    padding: 0 12px;
+    border-radius: 16px;
+    letter-spacing: 0.01071em;
+    line-height: 1.43;
+    text-align: center;
+
+    @include themed() {
+      color: theme-color(text-shade2);
+    }
+
+    &.dots:hover {
+      background-color: transparent;
+      cursor: default;
+    }
+
+    &:hover {
+      @include themed() {
+        background-color: rgba($color: theme-color(text-shade2), $alpha: 0.14);
+      }
+      cursor: pointer;
+    }
+
+    &.selected {
+      @include themed() {
+        background-color: rgba($color: theme-color(primary), $alpha: 0.18);
+      }
+    }
+
+    .arrow {
+      &::before {
+        content: '';
+        display: inline-block;
+        position: relative;
+        width: 0.4em;
+        height: 0.4em;
+        @include themed() {
+          border-top: 0.12em solid theme-color(text-shade2);
+          border-right: 0.12em solid theme-color(text-shade2);
+        }
+      }
+
+      &.left {
+        transform: rotate(-135deg) translate(-50%);
+      }
+
+      &.right {
+        transform: rotate(45deg);
+      }
+    }
+
+    &.disabled {
+      pointer-events: none;
+
+      .arrow::before {
+        @include themed() {
+          border-top: 0.12em solid
+            rgba($color: theme-color(text-shade2), $alpha: 0.63);
+          border-right: 0.12em solid
+            rgba($color: theme-color(text-shade2), $alpha: 0.63);
+        }
+      }
+
+      &:hover {
+        background-color: transparent;
+        cursor: default;
+      }
+    }
+  }
+}
