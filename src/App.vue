@@ -171,8 +171,9 @@ export default {
       axios
         .get(url)
         .then((response) => {
-          this.totalCountries = response.data.length;
-          this.allCountries = response.data;
+          const result = JSON.parse(response.data);
+          this.totalCountries = result.length;
+          this.allCountries = result;
           this.showResults = !!query;
           this.paginate(1, query);
         })
