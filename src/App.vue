@@ -157,19 +157,15 @@ export default {
     this.fetchCountries();
   },
 
-  watch: {
-    '$route.query': 'handleSearch'
-  },
-
   methods: {
     fetchCountries(query) {
       this.loading = true;
 
-      let url = '/all';
+      let url = '/countries';
 
       if (query) {
         const { name } = query;
-        url = `/name/${name}`;
+        url = `/countries/country/${name}`;
       }
 
       axios
